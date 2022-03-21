@@ -22,11 +22,21 @@
             console.log("Perdimos la conexion");
         });
 
-        socket.emit("mensaje", { nombre: "Fernando" });
+        // socket.emit("mensaje", { nombre: "Fernando" });
 
-        socket.on("mensaje", function( payload) {
-            console.log('Escuchando al admin', payload);
-        })
+        // socket.on("mensaje", function( payload) {
+        //     console.log('Escuchando al admin', payload);
+        // });
+
+        socket.on("nuevo-mensaje", function( payload) {
+            console.log('Escuchando a flutter', payload);
+        });
+
+        socket.on("active-bands", function( bands ) {
+            console.clear();
+            console.table(bands);
+        });
+
     </script>
 </body>
 </html>
